@@ -18,6 +18,7 @@ config = {
 options = YAML.load_file config[:local]
 
 Vagrant.configure("2") do |config|
+  config.vm.provider "virtualbox"
 
   config.vm.provider "virtualbox" do |vb|
     # machine cpus count
@@ -67,7 +68,7 @@ Vagrant.configure("2") do |config|
 
   
   # make sure that the port Rails uses is forwarded to VM
-  config.vm.network "forwarded_port", guest: 3000, host: 3000 
+  config.vm.network "forwarded_port", guest: 3002, host: 3002 
   # current working folder basename
   base_name = `basename $(pwd)`
   config.vm.provision "shell", privileged: false, path: "scripts/setup.sh", args: base_name
