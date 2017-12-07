@@ -32,7 +32,7 @@ synced_folder_father: /vagrant
 cpus: 1
 
 # Virtual machine RAM
-memory: 512
+memory: 2048
 
 owner: vagrant
 
